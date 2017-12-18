@@ -70,7 +70,7 @@ def send_email_smtp(to, subject, html_content, files=None, dryrun=False, cc=None
         recipients = recipients + bcc
 
     msg['Date'] = formatdate(localtime=True)
-    mime_text = MIMEText(html_content, 'html')
+    mime_text = MIMEText(html_content, 'html', 'utf-8')
     msg.attach(mime_text)
 
     for fname in files or []:
